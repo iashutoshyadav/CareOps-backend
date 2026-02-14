@@ -23,6 +23,10 @@ app.options('*', cors());
 
 app.use('/uploads', express.static('src/public/uploads'));
 
+app.get("/", (req, res) => {
+    res.send("CareOps Backend Running");
+});
+
 app.use('/v1', routes);
 
 app.use((req, res, next) => {
